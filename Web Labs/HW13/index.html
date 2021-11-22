@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>HW13 - Joel Lopez Villarreal</title>
+    </head>
+    <body>
+        <h1>HW13 - JavaScript Tricks</h1>
+        <script>
+            let items_selected = []
+            function itemClicked(num){
+                itemEl = document.getElementById(`${num}`);
+                itemEl.style.backgroundColor = "lightblue";
+                
+                if (!items_selected.includes(itemEl)){
+                    //console.log(items_selected.length);
+                    items_selected.push(itemEl);
+                }
+                if (items_selected.length >= 16){
+                    //console.log("redirect");
+                    window.location.href = "done.html";
+                }
+            }
+            let num = 1;
+            document.write("<table border=\"1\">");
+            for(let row = 1; row <= 4; row++){
+                document.write("<tr>");
+                for(let col = 1; col <= 4; col++){
+                    table_element_str = `<td id="${num}" onclick="itemClicked(${num});" style="background-color: red;">${num}</td>`;
+                    document.write(table_element_str);
+                    ++num;
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        </script>
+    </body>
+</html>

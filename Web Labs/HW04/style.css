@@ -1,0 +1,26 @@
+body{
+    background-color: lightgreen;
+}
+#pictureBox{
+    width: 800px;
+}
+@media only screen and (min-width:801px){
+    #headingMobile{
+        display:none;
+    }
+    img{
+        width: 200px;
+        height: auto;
+        position: relative;
+    }
+}
+@media only screen and (max-width:800px){
+    img{
+        width:300px;
+        height: auto;
+        position: relative;
+    }
+    #headingComputer{
+        display:none;
+    }
+}
